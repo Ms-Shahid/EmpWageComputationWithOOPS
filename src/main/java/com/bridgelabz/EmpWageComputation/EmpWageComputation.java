@@ -2,18 +2,23 @@ package com.bridgelabz.EmpWageComputation;
 
 public class EmpWageComputation {
 	
-	private int fullTime;
-
-	public EmpWageComputation(int fullTime) {
-		this.fullTime = fullTime;
+	private int fullTimePresent;
+	private int dailyWage;
+	private int fullTimeWork;
+	static int Wage_Per_Hour = 20;
+	
+	public EmpWageComputation(int fullTimePresent, int fullTimeWork) {
+		this.fullTimePresent = fullTimePresent;
+		this.fullTimeWork = fullTimeWork;
 	}
 
 	public void empCheck() {
 
 		int empCheck = (int) Math.floor(Math.random() * 10) % 2;
 
-		if (empCheck == fullTime) {
-			System.out.println("Employee is present");
+		if (empCheck == fullTimePresent) {
+			dailyWage = fullTimeWork * Wage_Per_Hour;
+			System.out.println("Employee is present and Daily wage is :" +dailyWage);
 		} else {
 			System.out.println("Employee is absent");
 		}
@@ -21,10 +26,7 @@ public class EmpWageComputation {
 
 	public static void main(String[] args) {
 
-		EmpWageComputation emp1 = new EmpWageComputation(1);
-		EmpWageComputation emp2 = new EmpWageComputation(0);
-		
+		EmpWageComputation emp1 = new EmpWageComputation(1,8);
 		emp1.empCheck();
-		emp2.empCheck();
 	}
 }
