@@ -1,6 +1,7 @@
 package com.bridgelabz.EmpWageComputation;
 
 public class EmpWageComputation {
+	
 	private int fullTime;
 
 	public EmpWageComputation(int fullTime) {
@@ -22,6 +23,7 @@ public class EmpWageComputation {
 
 		EmpWageComputation emp1 = new EmpWageComputation(1);
 		EmpWageComputation emp2 = new EmpWageComputation(0);
+		
 		emp1.empCheck();
 		emp2.empCheck();
 	}
