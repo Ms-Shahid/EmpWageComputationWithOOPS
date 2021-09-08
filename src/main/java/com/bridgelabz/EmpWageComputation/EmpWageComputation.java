@@ -22,14 +22,16 @@ public class EmpWageComputation {
 		int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 
 		switch (empCheck) {
-		case IS_PRESENT_FULL:dailyWage = fullTimeWork * Wage_Per_Hour;
+		case IS_PRESENT_FULL:
+			dailyWage = fullTimeWork * Wage_Per_Hour;
 			System.out.println("Employee is present full time and Daily wage is :" + dailyWage);
 			break;
-			
-		case IS_PRESENT_HALF:dailyWage = partTimeWork * Wage_Per_Hour;
+
+		case IS_PRESENT_HALF:
+			dailyWage = partTimeWork * Wage_Per_Hour;
 			System.out.println("Employee is present part time and Daily wage is :" + dailyWage);
 			break;
-			
+
 		default:
 			System.out.println("Employee is Absent");
 			break;
