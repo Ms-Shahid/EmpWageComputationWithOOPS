@@ -10,6 +10,7 @@ public class EmpWageComputation {
 
 	private int dailyWage;
 	static int Wage_Per_Hour = 20;
+	static int max_days =20;
 
 	EmpWageComputation(int fullTimeWork, int partTimeWork) {
 
@@ -18,32 +19,28 @@ public class EmpWageComputation {
 	}
 
 	public void empPresence() {
-
-		int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-
-		switch (empCheck) {
-		case IS_PRESENT_FULL:
-			dailyWage = fullTimeWork * Wage_Per_Hour;
-			System.out.println("Employee is present full time and Daily wage is :" + dailyWage);
-			break;
-
-		case IS_PRESENT_HALF:
-			dailyWage = partTimeWork * Wage_Per_Hour;
-			System.out.println("Employee is present part time and Daily wage is :" + dailyWage);
-			break;
-
-		default:
-			System.out.println("Employee is Absent");
-			break;
+		
+		int monthlyWage = 0;
+		for(int day=0; day<max_days;day++) {
+			
+			int empCheck = (int) Math.floor(Math.random() * 10) % 3; 
+			
+			switch (empCheck) {
+				case IS_PRESENT_FULL:dailyWage = fullTimeWork * Wage_Per_Hour;System.out.println("-------------"+"\n"+"Employee is present full time ");break;
+				case IS_PRESENT_HALF:dailyWage = partTimeWork * Wage_Per_Hour;System.out.println("-------------"+"\n"+"Employee is present part time " );break;
+				default:System.out.println("Employee is Absent");break;
+			}
+			monthlyWage += dailyWage;
 		}
+		System.out.println("Montly wage of Employee is " + monthlyWage);
 	}
 
 	public static void main(String[] args) {
 
-		EmpWageComputation emp1 = new EmpWageComputation(8, 0);
+		EmpWageComputation emp1 = new EmpWageComputation(8, 0); //fullTime
 		emp1.empPresence();
 
-		EmpWageComputation emp2 = new EmpWageComputation(0, 4);
+		EmpWageComputation emp2 = new EmpWageComputation(0, 4); //partTime
 		emp2.empPresence();
 
 	}
