@@ -18,16 +18,11 @@ public class EmpWageComputation {
 		this.partTimeWork = partTimeWork;
 	}
 
-	public void empPresence() {
+	public void empCompute() {
 		
-		int monthlyWage = 0;
-		int totalempHrs = 0;
-		int totalFullTimeHrs = 0;
-		int totalPartTimeHrs = 0;
-		int workingDays = 0;
+		int monthlyWage=0, totalempHrs = 0, totalFullTimeHrs = 0, totalPartTimeHrs = 0, workingDays = 0;
 		
 		while (totalempHrs <= max_hrs && workingDays <= max_days) {
-			
 			workingDays++;
 			int empCheck = (int) Math.floor(Math.random() * 10) % 3; 
 			
@@ -45,15 +40,14 @@ public class EmpWageComputation {
 		}
 		monthlyWage= totalempHrs * Wage_Per_Hour;
 		System.out.println("Monthly Wage of Employee is " + monthlyWage);
-		
 	}
 
 	public static void main(String[] args) {
 
-		EmpWageComputation emp1 = new EmpWageComputation(8, 0); //fullTime
-		emp1.empPresence();
+		EmpWageComputation emp1 = new EmpWageComputation(8, 0); 
+		emp1.empCompute();
 
-		EmpWageComputation emp2 = new EmpWageComputation(0, 4); //partTime
-		emp2.empPresence();
+		EmpWageComputation emp2 = new EmpWageComputation(0, 4); 
+		emp2.empCompute();
 	}
 }
